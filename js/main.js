@@ -35,14 +35,15 @@ let controlsP1 = {
 
 document.getElementById('rom').onchange = function() {
   const selectedOption = this.options[this.selectedIndex].value;
-
+  alert(selectedOption.split('/').slice(-1)[0]);
   fetch(selectedOption)
     .then(response => response.blob())
     .then(blob => {
-      const file = new File([blob], 'filename.extension', { type: blob.type });
+      const file = new File([blob], selectedOption.split('/').slice(-1)[0], { type: blob.type });
       
       alert("2");
       alert(file);
+      alert([blob]);
     })
     .catch(error => {
       console.error('Error fetching the file:', error);
