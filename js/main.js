@@ -39,7 +39,7 @@ document.getElementById('rom').onchange = function() {
   fetch(selectedOption)
     .then(response => response.blob())
     .then(blob => {
-      alert("1");
+      alert("2");
       alert(blob);
     })
     .catch(error => {
