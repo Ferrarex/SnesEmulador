@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>SnesJS</title>
+</head>
+<body>
+
+  <select style="height: 2%;" id="rom">
+    <option value="">Selecione o jogo</option>
+    <option value="roms/KirbySuperStar.sfc">Kirby</option>
+    <option value="roms/LegendofZeldaALinktothePast.sfc">Zelda</option>
+    <option value="roms/SuperMarioWorldSuperMarioAllStars.sfc">All Stars</option>
+  </select>
+
+  <input style="height: 2%;" id="ishirom" type="checkbox"> HiROM
+  <button style="height: 2%;" id="pause">Pause</button>
+  <button style="height: 2%;" id="reset">Reset</button>
+  <button style="height: 2%;" id="hardreset">Power cycle</button>
+  <button style="height: 2%;" id="runframe">Run 1 frame</button><br>
+  <canvas id="output"></canvas>
+  <pre id="log"></pre>
+
+  <script src="snes/cart.js"></script>
+  <script src="snes/dsp.js"></script>
+  <script src="snes/spc.js"></script>
+  <script src="snes/apu.js"></script>
+  <script src="snes/pipu.js"></script>
+  <script src="snes/cpu.js"></script>
+  <script src="snes/snes.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/trace.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
