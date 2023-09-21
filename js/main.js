@@ -40,10 +40,13 @@ document.getElementById('rom').onchange = function() {
     .then(response => response.blob())
     .then(blob => {
       const file = new File([blob], selectedOption.split('/').slice(-1)[0], { type: blob.type });
-      
-      alert("2");
-      alert(file);
-      alert([blob]);
+      let freader = new FileReader();
+      freader.onload = function() {
+        let buf = freader.result;
+          romArr = new Uint8Array(buf);
+          loadRom(romArr);
+      }
+      freader.readAsArrayBuffer(file);
     })
     .catch(error => {
       console.error('Error fetching the file:', error);
