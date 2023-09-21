@@ -35,7 +35,6 @@ let controlsP1 = {
 
 document.getElementById('rom').onchange = function() {
   const selectedOption = this.options[this.selectedIndex].value;
-  alert(selectedOption.split('/').slice(-1)[0]);
   fetch(selectedOption)
     .then(response => response.blob())
     .then(blob => {
