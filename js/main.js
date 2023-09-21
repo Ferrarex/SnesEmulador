@@ -34,43 +34,18 @@ let controlsP1 = {
 }
 
 document.getElementById('rom').onchange = function() {
-  alert("1");
-
   const selectedOption = this.options[this.selectedIndex].value;
 
-fetch(selectedOption)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    return response.blob();
-  })
-  .then(data => {
-    alert(data);
-  })
-  .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+  fetch(selectedOption)
+    .then(response => response.blob())
+    .then(blob => {
+      alert("1");
+      alert(blob);
+    })
+    .catch(error => {
+      console.error('Error fetching the file:', error);
+    });
 }
-
-//el("rom").onchange = function(e) {
-
-//fetch('/path/to/your/file.txt')
-  //.then(response => response.blob())
-  //.then(blob => {
-    //let freader = new FileReader();
-    //freader.onload = function() {
-      //let buf = freader.result;
-      //romArr = new Uint8Array(buf);
-      //loadRom(romArr);
-    //}
-    //freader.readAsArrayBuffer(blob);
-  //})
-  //.catch(error => {
-    //console.error('Error fetching the file:', error);
-  //});
-
-//}
 
 el("pause").onclick = function() {
   if(paused && loaded) {
