@@ -34,16 +34,23 @@ let controlsP1 = {
 }
 
 document.getElementById('rom').onchange = function() {
+  alert("1");
+
   const selectedOption = this.options[this.selectedIndex].value;
 
-  fetch(selectedOption)
-    .then(response => response.blob())
-    .then(blob => {
-      alert("1");
-    })
-    .catch(error => {
-      console.error('Error fetching the file:', error);
-    });
+fetch(selectedOption)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.blob();
+  })
+  .then(data => {
+    alert(data);
+  })
+  .catch(error => {
+    console.error('There was a problem with the fetch operation:', error);
+  });
 }
 
 //el("rom").onchange = function(e) {
