@@ -39,8 +39,10 @@ document.getElementById('rom').onchange = function() {
   fetch(selectedOption)
     .then(response => response.blob())
     .then(blob => {
+      const file = new File([blob], 'filename.extension', { type: blob.type });
+      
       alert("2");
-      alert(blob);
+      alert(file);
     })
     .catch(error => {
       console.error('Error fetching the file:', error);
