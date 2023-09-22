@@ -57,12 +57,12 @@ el("pause").onclick = function() {
     loopId = requestAnimationFrame(update);
     audioHandler.start();
     paused = false;
-    el("pause").textContent = "Pause";
+    el("pause").textContent = "Pausar";
   } else {
     cancelAnimationFrame(loopId);
     audioHandler.stop();
     paused = true;
-    el("pause").textContent = "Continue";
+    el("pause").textContent = "Continuar";
   }
 }
 
