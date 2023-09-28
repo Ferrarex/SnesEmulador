@@ -33,6 +33,7 @@ pre {
 }
 
 .controles {
+  text-align: justify;
   margin: 7px 7px;
   position: fixed;
 }
