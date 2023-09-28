@@ -31,3 +31,8 @@ pre {
   image-rendering: crisp-edges;
   image-rendering: pixelated;
 }
+
+.controles {
+  margin: 7px 7px;
+  position: fixed;
+}
